@@ -18,7 +18,10 @@ function workingHours(empCheck) {
             return 0;
     }
 }
-var empCheck=Math.floor(Math.random()*10)%3;
-var empHrs=workingHours(empCheck);
-var dailyWage=WAGE_PER_HR*empHrs;
-console.log("Daily wage of an Employee is: "+dailyWage);
+var empHrs=0;
+for(var day=1;day<=20;day++){
+    var empCheck=Math.floor(Math.random()*10)%3;
+    empHrs+=workingHours(empCheck)
+}
+var wage=WAGE_PER_HR*empHrs;
+console.log("Monthly wage of an Employee is: "+wage);
