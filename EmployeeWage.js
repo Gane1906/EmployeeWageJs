@@ -6,15 +6,19 @@ const IS_PART_TIME=2;
 const FULL_TIME_HRS=8;
 const PART_TIME_HRS=4;
 const WAGE_PER_HR=20;
-var empHrs=0;
-var empCheck = Math.floor(Math.random() * 10) % 3;
-switch(empCheck){
-    case IS_FULL_TIME:
-        empHrs=FULL_TIME_HRS;
-        break;
-    case IS_PART_TIME:
-        empHrs=PART_TIME_HRS;
-        break;
+function workingHours(empCheck) {
+    switch (empCheck) {
+        case IS_FULL_TIME:
+            return FULL_TIME_HRS;
+            break;
+        case IS_PART_TIME:
+            return PART_TIME_HRS;
+            break;
+        default:
+            return 0;
+    }
 }
+var empCheck=Math.floor(Math.random()*10)%3;
+var empHrs=workingHours(empCheck);
 var dailyWage=WAGE_PER_HR*empHrs;
-console.log("Dailyt wage of an Employee is: "+dailyWage);
+console.log("Daily wage of an Employee is: "+dailyWage);
