@@ -6,6 +6,7 @@ const IS_PART_TIME=2;
 const FULL_TIME_HRS=8;
 const PART_TIME_HRS=4;
 const WAGE_PER_HR=20;
+const NO_OF_DAYS=20;
 function workingHours(empCheck) {
     switch (empCheck) {
         case IS_FULL_TIME:
@@ -19,7 +20,7 @@ function workingHours(empCheck) {
     }
 }
 var empHrs=0;
-for(var day=1;day<=20;day++){
+for(var day=1;day<=NO_OF_DAYS;day++){
     var empCheck=Math.floor(Math.random()*10)%3;
     empHrs+=workingHours(empCheck)
 }
